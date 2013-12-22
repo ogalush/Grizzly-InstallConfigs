@@ -25,6 +25,8 @@ kinder: nova-compute node
  (openvswitch1.4.3がgreトンネリング非対応であったため)  
    
  nova(KVM)+quantum(openvswitch)の構成としている。  
- 
+   
+ [外部]→[floatingIP(192.168.0.X)→quantum(ryunosuke)→vlan→quantum(kinder)という流れ。  
+   
  以上
  
