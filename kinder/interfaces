@@ -1,0 +1,42 @@
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+
+# The primary network interface
+auto eth0
+iface eth0 inet manual
+ up ip address add 0/0 dev $IFACE
+ up ip link set $IFACE up
+ down ip link set $IFACE down
+
+auto br-ex
+iface br-ex inet static
+ address 192.168.0.210
+ netmask 255.255.255.0
+ gateway 192.168.0.254
+ dns-nameservers 192.168.0.254
+ 
+
+
+## Internal Network
+auto eth1
+iface eth1 inet manual
+ up ip address add 0/0 dev $IFACE
+ up ip link set $IFACE up
+ down ip link set $IFACE down
+
+auto br-eth1
+iface br-eth1 inet static
+ address 10.0.1.210
+ network 10.0.1.0
+ netmask 255.255.255.0
+ broadcast 10.0.1.255
+
+
+#auto eth1
+#iface eth1 inet static
+# address 10.0.0.11
+# netmask 255.255.255.0
+# network 10.0.0.0
+# broadcast 10.0.0.255
