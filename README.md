@@ -19,12 +19,12 @@ kinder: nova-compute node
 ```
 
 ### 詳細
- ryunosukeでnova,quantumなどの全サービスを担っている
- kinder→ryunosuke経由で表側のアクセスを行う。
- maintenanse系のネットワークは、10.0.1.0/24で、kinder→ryunosuke間はvlan構成としている。
- (openvswitch1.4.3がgreトンネリング非対応であったため)
- 
- nova(KVM)+quantum(openvswitch)の構成としている。
+ ryunosukeでnova,quantumなどの全サービスを担っている  
+ kinder→ryunosuke経由で表側のアクセスを行う。  
+ maintenanse系のネットワークは、10.0.1.0/24で、kinder→ryunosuke間はvlan構成としている。  
+ (openvswitch1.4.3がgreトンネリング非対応であったため)  
+   
+ nova(KVM)+quantum(openvswitch)の構成としている。  
  
  以上
  
